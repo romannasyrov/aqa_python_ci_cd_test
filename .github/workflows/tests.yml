@@ -29,7 +29,7 @@ jobs:
           python-version: '3.11'
 
       - name: Cache pip
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -57,7 +57,7 @@ jobs:
           python-version: '3.11'
 
       - name: Cache pip
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -74,7 +74,7 @@ jobs:
 
       - name: Upload Allure results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: allure-results
           path: allure-results
@@ -97,7 +97,7 @@ jobs:
 
       - name: Deploy Allure report to GitHub Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
