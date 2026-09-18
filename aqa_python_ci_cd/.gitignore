@@ -1,0 +1,23 @@
+# Старые проекты
+hw_01_basics/
+hw_02_pytest/
+src/
+config.py
+.gitlab-ci.yml
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Allure
+allure-results/
+allure-report/
+
+# Логи
+*.log
+.DS_Store
