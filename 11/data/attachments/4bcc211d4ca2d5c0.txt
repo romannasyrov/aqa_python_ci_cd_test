@@ -1,0 +1,2 @@
+INFO     clients.api_client:api_client.py:20 POST https://jsonplaceholder.typicode.com/posts | keys: ['json']
+INFO     clients.api_client:api_client.py:31 201 https://jsonplaceholder.typicode.com/posts
