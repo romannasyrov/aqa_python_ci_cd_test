@@ -1,7 +1,7 @@
 import requests
 
-from aqa_python_ci_cd.clients.api_client import ApiClient
-from aqa_python_ci_cd.clients.services.models.request_model import CreatePostRequest
+from clients.api_client import ApiClient
+from clients.services.models.request_model import CreatePostRequest
 
 
 class Routes:

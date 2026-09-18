@@ -1,12 +1,5 @@
-allure-pytest==2.15.3
-bcrypt==5.0.0
-curlify==3.0.0
-Faker==40.1.2
-flasgger==0.9.7.1
-Flask==3.1.2
-Flask-Cors==6.0.2
-Flask-SQLAlchemy==3.1.1
-pydantic==2.12.5
-PyJWT==2.10.1
-pytest==9.0.2
-requests==2.32.5
+requests
+pytest
+pytest-mock
+allure-pytest
+pydantic

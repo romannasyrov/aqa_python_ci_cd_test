@@ -2,9 +2,9 @@ import logging
 
 import pytest
 
-from aqa_python_ci_cd.clients.api_client import ApiClient
-from aqa_python_ci_cd.clients.services.adapter import PostsAdapter
-from aqa_python_ci_cd.clients.services.post_service.service import PostsService
+from clients.api_client import ApiClient
+from clients.services.adapter import PostsAdapter
+from clients.services.post_service.service import PostsService
 
 logging.basicConfig(
     level=logging.INFO,

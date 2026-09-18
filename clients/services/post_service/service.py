@@ -1,5 +1,5 @@
-from aqa_python_ci_cd.clients.services.adapter import PostsAdapter
-from aqa_python_ci_cd.clients.services.models.request_model import CreatePostRequest
+from clients.services.adapter import PostsAdapter
+from clients.services.models.request_model import CreatePostRequest
 
 
 class PostsService:

@@ -1,23 +1,10 @@
-**Общая информация**
+# AQA Python CI/CD
 
-Проект представляет собой учебный-фреймворк для бэкенд автотестов
+Учебный проект для практики CI/CD.
 
-Основной стек:
-````
-- pytest + allure + requests + pydantic
-- Service + Adapter паттерн
-- Поддержка авторизованных и неавторизованных запросов
-- Allure-отчёты с детальными шагами
-````
+## Запуск тестов
 
-Установка зависимостей:
-````
+```bash
 pip install -r requirements.txt
-````
+pytest
 
-Запуск тестов:
-````
-python -m pytest --alluredir=./allure-results
-
-allure serve ./allure-results/  
-````

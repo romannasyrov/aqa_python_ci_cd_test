@@ -2,7 +2,7 @@ import allure
 import pytest
 import requests
 
-from aqa_python_ci_cd.clients.api_client import ApiClient
+from clients.api_client import ApiClient
 
 
 @allure.title('Получение юзера')
