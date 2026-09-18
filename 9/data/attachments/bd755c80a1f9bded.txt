@@ -1,0 +1,4 @@
+2026-09-18 13:27:06,467 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-09-18 13:27:06,467 [WARNING] clients.api_client: Попытка 1/3 упала, повтор через 1с.
+2026-09-18 13:27:06,467 [WARNING] clients.api_client: Попытка 2/3 упала, повтор через 2с.
+2026-09-18 13:27:06,467 [INFO] clients.api_client: 200 https://api.example.com/posts/1

@@ -1,0 +1,4 @@
+INFO     clients.api_client:api_client.py:20 GET https://api.example.com/posts/1 | keys: []
+WARNING  clients.api_client:api_client.py:47 Попытка 1/3 упала, повтор через 1с.
+WARNING  clients.api_client:api_client.py:47 Попытка 2/3 упала, повтор через 2с.
+INFO     clients.api_client:api_client.py:31 200 https://api.example.com/posts/1

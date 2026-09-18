@@ -1,0 +1,5 @@
+2026-09-18 13:27:06,473 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-09-18 13:27:06,473 [WARNING] clients.api_client: Попытка 1/3 упала, повтор через 1с.
+2026-09-18 13:27:06,473 [WARNING] clients.api_client: Попытка 2/3 упала, повтор через 2с.
+2026-09-18 13:27:06,473 [ERROR] clients.api_client: Все 3 попытки исчерпаны для 'GET https://jsonplaceholder.typicode.com/posts/1'
+2026-09-18 13:27:06,473 [ERROR] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | Timeout: timeout
