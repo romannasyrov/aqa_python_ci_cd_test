@@ -120,21 +120,28 @@ def test_retry_count(api_client, mocker):
     assert mock_request.call_count == 3
 
 
-@allure.title('Тест задержки повторного запроса')
+@allure.feature("API Client")
+@allure.story("Retry")
+@allure.title("Тест задержки повторного запроса")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_retry_delays(api_client, mocker):
-    mock_request = mocker.patch.object(
-        requests.Session,
-        "request",
-        side_effect=requests.Timeout("timeout"),
-    )
-    mock_sleep = mocker.patch("time.sleep")
+    with allure.step("Мокаем Timeout и time.sleep"):
+        mock_request = mocker.patch.object(
+            requests.Session,
+            "request",
+            side_effect=requests.Timeout("timeout"),
+        )
+        mock_sleep = mocker.patch("time.sleep")
 
-    with pytest.raises(requests.Timeout):
-        api_client.get("/posts/1")
+    with allure.step("Отправляем запрос и ждём исключения"):
+        with pytest.raises(requests.Timeout):
+            api_client.get("/posts/1")
 
-    assert mock_sleep.call_count == 2
-    mock_sleep.assert_any_call(1)
-    mock_sleep.assert_any_call(2)
+    with allure.step("Проверяем количество попыток и задержек"):
+        assert mock_request.call_count == 3   # 3 попытки
+        assert mock_sleep.call_count == 2     # 2 задержки
+        mock_sleep.assert_any_call(1)
+        mock_sleep.assert_any_call(2)
 
 
 @allure.title('Без повторного вызова после 404 ошибки')
