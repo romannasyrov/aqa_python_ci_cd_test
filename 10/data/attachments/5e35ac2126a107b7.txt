@@ -1,0 +1,2 @@
+2026-09-18 13:38:16,064 [INFO] clients.api_client: POST https://jsonplaceholder.typicode.com/posts | keys: ['json']
+2026-09-18 13:38:16,159 [INFO] clients.api_client: 201 https://jsonplaceholder.typicode.com/posts

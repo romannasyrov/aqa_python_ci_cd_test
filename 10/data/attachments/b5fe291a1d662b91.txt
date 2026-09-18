@@ -1,0 +1,2 @@
+INFO     clients.api_client:api_client.py:20 GET https://jsonplaceholder.typicode.com/posts/999 | keys: []
+INFO     clients.api_client:api_client.py:31 404 https://jsonplaceholder.typicode.com/posts/999
