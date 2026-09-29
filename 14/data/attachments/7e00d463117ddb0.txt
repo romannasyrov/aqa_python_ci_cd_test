@@ -1,0 +1,12 @@
+2026-09-29 10:33:22,791 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-09-29 10:33:22,791 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-09-29 10:33:22,791 [WARNING] utils.retry: _request: попытка 1/3 упала с Timeout
+2026-09-29 10:33:22,791 [INFO] utils.retry: _request: повтор через 1.65с
+2026-09-29 10:33:22,791 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-09-29 10:33:22,791 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-09-29 10:33:22,791 [WARNING] utils.retry: _request: попытка 2/3 упала с Timeout
+2026-09-29 10:33:22,792 [INFO] utils.retry: _request: повтор через 2.36с
+2026-09-29 10:33:22,792 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-09-29 10:33:22,792 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-09-29 10:33:22,792 [WARNING] utils.retry: _request: попытка 3/3 упала с Timeout
+2026-09-29 10:33:22,792 [ERROR] utils.retry: _request: все 3 попытки исчерпаны

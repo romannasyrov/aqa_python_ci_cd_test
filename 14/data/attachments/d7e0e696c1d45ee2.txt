@@ -1,0 +1,3 @@
+2026-09-29 10:33:22,917 [INFO] clients.api_client: POST https://jsonplaceholder.typicode.com/posts | keys: ['json']
+2026-09-29 10:33:23,041 [INFO] clients.api_client: 201 https://jsonplaceholder.typicode.com/posts
+2026-09-29 10:33:23,041 [INFO] utils.timing: [TIMING] _request - 0.124s
