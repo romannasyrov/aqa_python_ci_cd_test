@@ -1,10 +1,12 @@
 import logging
+import time
 from http import HTTPMethod
 from urllib.parse import urljoin
 
 import requests
 
 from utils.retry import retry
+from utils.timing import timing
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +18,20 @@ class ApiClient:
         if headers:
             self.session.headers.update(headers)
 
+    def __enter__(self):
+        self._start = time.perf_counter()
+        logger.info(f"[ApiClient] Открыт для {self.host}")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        try:
+            self.session.close()
+        except Exception as e:
+            logger.warning(f"[ApiClient] Ошибка при закрытии: {e}")
+        return False
+
     @retry(retries=3, base_delay=1.0)
+    @timing
     def _request(self, endpoint: str, method: HTTPMethod, **kwargs) -> requests.Response:
         url = urljoin(self.host, endpoint)
         logger.info(f"{method} {url} | keys: {list(kwargs.keys())}")

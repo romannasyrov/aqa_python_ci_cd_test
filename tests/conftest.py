@@ -14,9 +14,8 @@ logging.basicConfig(
 
 @pytest.fixture(scope="session")
 def api_client():
-    return ApiClient(
-        host="https://jsonplaceholder.typicode.com"
-    )
+    with ApiClient(host="https://jsonplaceholder.typicode.com") as client:
+        yield client
 
 
 @pytest.fixture(scope="session")
