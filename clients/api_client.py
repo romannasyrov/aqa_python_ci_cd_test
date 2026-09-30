@@ -49,8 +49,6 @@ class ApiClient:
             logger.info(f"{response.status_code} {url}")
             return response
 
-
-
     def _attach_request(self, method: HTTPMethod, url: str, kwargs: dict):
         body = kwargs.get("json") or kwargs.get("data") or {}
         headers = kwargs.get("headers") or dict(self.session.headers)
