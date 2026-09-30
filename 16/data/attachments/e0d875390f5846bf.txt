@@ -1,0 +1,12 @@
+INFO     clients.api_client:api_client.py:38 GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.000s
+WARNING  utils.retry:retry.py:36 _request: попытка 1/3 упала с Timeout
+INFO     utils.retry:retry.py:48 _request: повтор через 1.25с
+INFO     clients.api_client:api_client.py:38 GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.001s
+WARNING  utils.retry:retry.py:36 _request: попытка 2/3 упала с Timeout
+INFO     utils.retry:retry.py:48 _request: повтор через 2.67с
+INFO     clients.api_client:api_client.py:38 GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.001s
+WARNING  utils.retry:retry.py:36 _request: попытка 3/3 упала с Timeout
+ERROR    utils.retry:retry.py:42 _request: все 3 попытки исчерпаны

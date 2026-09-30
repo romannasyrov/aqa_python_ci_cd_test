@@ -1,0 +1,4 @@
+2026-09-30 07:56:07,310 [INFO] clients.api_client: [ApiClient] Открыт для https://jsonplaceholder.typicode.com
+2026-09-30 07:56:07,311 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/users/1 | keys: []
+2026-09-30 07:56:07,386 [INFO] clients.api_client: 200 https://jsonplaceholder.typicode.com/users/1
+2026-09-30 07:56:07,386 [INFO] utils.timing: [TIMING] _request - 0.075s

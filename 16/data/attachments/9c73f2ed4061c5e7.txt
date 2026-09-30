@@ -1,0 +1,7 @@
+2026-09-30 07:56:07,323 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-09-30 07:56:07,324 [INFO] utils.timing: [TIMING] _request - 0.002s
+2026-09-30 07:56:07,324 [WARNING] utils.retry: _request: попытка 1/3 упала с ConnectionError
+2026-09-30 07:56:07,324 [INFO] utils.retry: _request: повтор через 1.94с
+2026-09-30 07:56:07,325 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-09-30 07:56:07,325 [INFO] clients.api_client: 200 https://api.example.com/posts/1
+2026-09-30 07:56:07,325 [INFO] utils.timing: [TIMING] _request - 0.000s

@@ -1,0 +1,4 @@
+INFO     clients.api_client:api_client.py:24 [ApiClient] Открыт для https://jsonplaceholder.typicode.com
+INFO     clients.api_client:api_client.py:38 GET https://jsonplaceholder.typicode.com/users/1 | keys: []
+INFO     clients.api_client:api_client.py:49 200 https://jsonplaceholder.typicode.com/users/1
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.075s

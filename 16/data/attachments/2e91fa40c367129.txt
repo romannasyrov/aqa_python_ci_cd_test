@@ -1,0 +1,3 @@
+INFO     clients.api_client:api_client.py:38 POST https://jsonplaceholder.typicode.com/posts | keys: ['json']
+INFO     clients.api_client:api_client.py:49 201 https://jsonplaceholder.typicode.com/posts
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.027s
