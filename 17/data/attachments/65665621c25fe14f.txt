@@ -1,0 +1,3 @@
+2026-09-30 17:58:21,298 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/999 | keys: []
+2026-09-30 17:58:21,298 [INFO] clients.api_client: 404 https://jsonplaceholder.typicode.com/posts/999
+2026-09-30 17:58:21,298 [INFO] utils.timing: [TIMING] _request - 0.000s
