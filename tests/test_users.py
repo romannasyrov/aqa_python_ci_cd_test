@@ -31,7 +31,7 @@ def test_create_post(posts_service):
     assert response.status_code == 201
     assert body["title"] == "bla"
     assert body["body"] == "bla123"
-    assert body["user_id"] == 1
+    assert body["userId"] == 1
 
 
 @allure.title('Успех с первой попытки')
@@ -105,21 +105,6 @@ def test_retry_all_attempts_failed(mocker):
     assert mock_request.call_count == 3
 
 
-@allure.title('Максимум попыток')
-def test_retry_count(api_client, mocker):
-    mock_request = mocker.patch.object(
-        requests.Session,
-        "request",
-        side_effect=requests.Timeout("timeout"),
-    )
-    mocker.patch("time.sleep")
-
-    with pytest.raises(requests.Timeout):
-        api_client.get("/posts/1")
-
-    assert mock_request.call_count == 3
-
-
 @allure.feature("API Client")
 @allure.story("Retry")
 @allure.title("Тест задержки повторного запроса")
@@ -157,4 +142,29 @@ def test_no_retry_on_404(api_client, mocker):
     response = api_client.get("/posts/999")
 
     assert response.status_code == 404
-    assert mock_request.call_count == 1  # retry не вызывался
+    assert mock_request.call_count == 1
+
+
+@pytest.mark.parametrize("status", [500, 502, 503, 504])
+def test_retry_on_5xx(api_client, mocker, status):
+    mocker.patch("time.sleep")
+    mock_request = mocker.patch.object(
+        requests.Session, "request",
+        side_effect=[mocker.Mock(status_code=status), mocker.Mock(status_code=200)],
+    )
+    assert api_client.get("/posts/1").status_code == 200
+    assert mock_request.call_count == 2
+
+
+@allure.title('Все попытки исчерпаны на 5xx')
+def test_retry_all_attempts_5xx(api_client, mocker):
+    mocker.patch("time.sleep")
+    mock_request = mocker.patch.object(
+        requests.Session, "request",
+        return_value=mocker.Mock(status_code=503),
+    )
+
+    with pytest.raises(requests.HTTPError):
+        api_client.get("/posts/1")
+
+    assert mock_request.call_count == 3

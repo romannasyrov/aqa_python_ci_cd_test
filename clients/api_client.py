@@ -1,5 +1,4 @@
 import logging
-import time
 from http import HTTPMethod
 from urllib.parse import urljoin
 
@@ -18,18 +17,6 @@ class ApiClient:
         self.session = requests.Session()
         if headers:
             self.session.headers.update(headers)
-
-    def __enter__(self):
-        self._start = time.perf_counter()
-        logger.info(f"[ApiClient] Открыт для {self.host}")
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        try:
-            self.session.close()
-        except Exception as e:
-            logger.warning(f"[ApiClient] Ошибка при закрытии: {e}")
-        return False
 
     @retry(retries=3, base_delay=1.0)
     @timing

@@ -1,3 +1,4 @@
+allure-python-commons
 requests
 pytest
 pytest-mock

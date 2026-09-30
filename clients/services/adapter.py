@@ -22,5 +22,5 @@ class PostsAdapter:
     ) -> requests.Response:
         return self.api_client.post(
             endpoint=Routes.POSTS,
-            json=request_model.model_dump(),
+            json=request_model.model_dump(by_alias=True),
         )
