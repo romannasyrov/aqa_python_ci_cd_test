@@ -1,0 +1,10 @@
+GET https://jsonplaceholder.typicode.com/posts/999
+
+Headers: 
+  User-Agent: python-requests/2.34.2
+  Accept-Encoding: gzip, deflate
+  Accept: */*
+  Connection: keep-alive
+
+Body:
+{}

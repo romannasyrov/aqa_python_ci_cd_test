@@ -1,0 +1,3 @@
+INFO     clients.api_client:api_client.py:25 GET https://jsonplaceholder.typicode.com/posts/999 | keys: []
+INFO     clients.api_client:api_client.py:36 404 https://jsonplaceholder.typicode.com/posts/999
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.002s
