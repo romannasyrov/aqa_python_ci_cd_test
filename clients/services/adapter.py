@@ -1,4 +1,3 @@
-import requests
 from pydantic import BaseModel
 
 from clients.api_client import ApiClient
