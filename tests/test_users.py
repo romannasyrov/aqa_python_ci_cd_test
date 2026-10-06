@@ -28,7 +28,7 @@ def test_get_user(api_client):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.title("Создание поста")
 def test_create_post(posts_service, worker_post_data):
-    with allure.step(f"Отправить POST /posts с worker-scoped данными"):
+    with allure.step("Отправить POST /posts с worker-scoped данными"):
         allure.attach(
             name="Request payload",
             body=str(worker_post_data),
@@ -44,7 +44,6 @@ def test_create_post(posts_service, worker_post_data):
         assert body["title"] == worker_post_data["title"]
         assert body["body"] == worker_post_data["body"]
         assert body["userId"] == worker_post_data["userId"]
-
 
 
 @allure.feature("API Client")
