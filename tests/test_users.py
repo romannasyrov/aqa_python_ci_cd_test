@@ -19,19 +19,23 @@ def test_get_user(api_client):
 
 
 @allure.title('Создание юзера')
-def test_create_post(posts_service):
-    response = posts_service.create_post(
-        title="bla",
-        body="bla123",
-        userId=1
+def test_create_post(posts_service, worker_id, worker_post_data):
+    allure.dynamic.parameter("worker", worker_id)
+
+    allure.attach(
+        name="Request payload",
+        body=str(worker_post_data),
+        attachment_type=allure.attachment_type.TEXT,
     )
+
+    response = posts_service.create_post(**worker_post_data)
 
     body = response.json()
 
     assert response.status_code == 201
-    assert body["title"] == "bla"
-    assert body["body"] == "bla123"
-    assert body["userId"] == 1
+    assert body["title"] == worker_post_data["title"]
+    assert body["body"] == worker_post_data["body"]
+    assert body["userId"] == worker_post_data["userId"]
 
 
 @allure.title('Успех с первой попытки')
