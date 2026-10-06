@@ -1,0 +1,15 @@
+2026-10-06 10:30:02,858 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-10-06 10:30:02,858 [INFO] clients.api_client: 503 https://jsonplaceholder.typicode.com/posts/1
+2026-10-06 10:30:02,858 [INFO] utils.timing: [TIMING] _request - 0.001s
+2026-10-06 10:30:02,858 [WARNING] utils.retry: _request: попытка 1/3вернула 503
+2026-10-06 10:30:02,858 [INFO] utils.retry: _request: повтор через 1.36с
+2026-10-06 10:30:02,859 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-10-06 10:30:02,859 [INFO] clients.api_client: 503 https://jsonplaceholder.typicode.com/posts/1
+2026-10-06 10:30:02,859 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-10-06 10:30:02,859 [WARNING] utils.retry: _request: попытка 2/3вернула 503
+2026-10-06 10:30:02,859 [INFO] utils.retry: _request: повтор через 2.66с
+2026-10-06 10:30:02,860 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-10-06 10:30:02,860 [INFO] clients.api_client: 503 https://jsonplaceholder.typicode.com/posts/1
+2026-10-06 10:30:02,860 [INFO] utils.timing: [TIMING] _request - 0.001s
+2026-10-06 10:30:02,860 [WARNING] utils.retry: _request: попытка 3/3вернула 503
+2026-10-06 10:30:02,860 [ERROR] utils.retry: _request: все 3 попытки исчерпаны
