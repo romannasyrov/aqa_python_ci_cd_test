@@ -1,0 +1,12 @@
+2026-10-06 10:36:25,506 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-10-06 10:36:25,507 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-10-06 10:36:25,507 [WARNING] utils.retry: _request: попытка 1/3 упала с Timeout
+2026-10-06 10:36:25,507 [INFO] utils.retry: _request: повтор через 1.01с
+2026-10-06 10:36:25,507 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-10-06 10:36:25,508 [INFO] utils.timing: [TIMING] _request - 0.001s
+2026-10-06 10:36:25,508 [WARNING] utils.retry: _request: попытка 2/3 упала с Timeout
+2026-10-06 10:36:25,508 [INFO] utils.retry: _request: повтор через 2.02с
+2026-10-06 10:36:25,508 [INFO] clients.api_client: GET https://api.example.com/posts/1 | keys: []
+2026-10-06 10:36:25,509 [INFO] utils.timing: [TIMING] _request - 0.001s
+2026-10-06 10:36:25,509 [WARNING] utils.retry: _request: попытка 3/3 упала с Timeout
+2026-10-06 10:36:25,509 [ERROR] utils.retry: _request: все 3 попытки исчерпаны
