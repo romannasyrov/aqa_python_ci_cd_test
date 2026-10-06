@@ -2,6 +2,7 @@ import requests
 from pydantic import BaseModel
 
 from clients.api_client import ApiClient
+from clients.services.models.response_model import CreatePostResponse
 
 
 class Routes:
@@ -19,9 +20,11 @@ class PostsAdapter:
     def create_post(
             self,
             request_model: BaseModel | dict,
-    ) -> requests.Response:
+    ) -> CreatePostResponse:
         payload = request_model.model_dump(by_alias=True) if isinstance(request_model, BaseModel) else request_model
-        return self.api_client.post(
+        response = self.api_client.post(
             endpoint=Routes.POSTS,
             json=payload,
         )
+        response.raise_for_status()
+        return CreatePostResponse.model_validate(response.json())

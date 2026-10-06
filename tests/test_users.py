@@ -36,14 +36,11 @@ def test_create_post(posts_service, worker_post_data):
         )
         response = posts_service.create_post(**worker_post_data)
 
-    with allure.step("Проверить статус 201"):
-        assert response.status_code == 201
-
-    with allure.step("Проверить тело ответа"):
-        body = response.json()
-        assert body["title"] == worker_post_data["title"]
-        assert body["body"] == worker_post_data["body"]
-        assert body["userId"] == worker_post_data["userId"]
+    with allure.step("Проверить, что пост создан (валидация модели ответа)"):
+        assert response.id > 0
+        assert response.title == worker_post_data["title"]
+        assert response.body == worker_post_data["body"]
+        assert response.user_id == worker_post_data["userId"]
 
 
 @allure.feature("API Client")
