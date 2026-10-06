@@ -1,0 +1,8 @@
+INFO     clients.api_client:api_client.py:25 GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+INFO     clients.api_client:api_client.py:36 503 https://jsonplaceholder.typicode.com/posts/1
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.001s
+WARNING  utils.retry:retry.py:28 _request: попытка 1/3вернула 503
+INFO     utils.retry:retry.py:48 _request: повтор через 1.30с
+INFO     clients.api_client:api_client.py:25 GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+INFO     clients.api_client:api_client.py:36 200 https://jsonplaceholder.typicode.com/posts/1
+INFO     utils.timing:timing.py:15 [TIMING] _request - 0.000s
