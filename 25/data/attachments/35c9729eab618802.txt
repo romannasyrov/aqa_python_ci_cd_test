@@ -1,0 +1,8 @@
+2026-10-08 06:05:30,181 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-10-08 06:05:30,181 [INFO] clients.api_client: 500 https://jsonplaceholder.typicode.com/posts/1
+2026-10-08 06:05:30,182 [INFO] utils.timing: [TIMING] _request - 0.000s
+2026-10-08 06:05:30,182 [WARNING] utils.retry: _request: попытка 1/3вернула 500
+2026-10-08 06:05:30,182 [INFO] utils.retry: _request: повтор через 1.96с
+2026-10-08 06:05:30,182 [INFO] clients.api_client: GET https://jsonplaceholder.typicode.com/posts/1 | keys: []
+2026-10-08 06:05:30,182 [INFO] clients.api_client: 200 https://jsonplaceholder.typicode.com/posts/1
+2026-10-08 06:05:30,182 [INFO] utils.timing: [TIMING] _request - 0.000s

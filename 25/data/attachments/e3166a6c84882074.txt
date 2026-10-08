@@ -1,0 +1,14 @@
+POST https://jsonplaceholder.typicode.com/posts
+
+Headers: 
+  User-Agent: python-requests/2.34.2
+  Accept-Encoding: gzip, deflate
+  Accept: */*
+  Connection: keep-alive
+
+Body:
+{
+  "title": "post_gw0_bda6ce0e",
+  "body": "body_gw0_40336111",
+  "userId": 1
+}
