@@ -29,11 +29,6 @@ def test_get_user(api_client):
 @allure.title("Создание поста")
 def test_create_post(posts_service, worker_post_data):
     with allure.step("Отправить POST /posts с worker-scoped данными"):
-        allure.attach(
-            name="Request payload",
-            body=str(worker_post_data),
-            attachment_type=allure.attachment_type.TEXT,
-        )
         response = posts_service.create_post(**worker_post_data)
 
     with allure.step("Проверить, что пост создан (валидация модели ответа)"):
